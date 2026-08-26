@@ -10,3 +10,14 @@ body    {
     flex-direction: column;
     margin: 0;
 }
+
+.header {
+    background-color: rgb(52, 70, 173);
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    font-size: 70px;
+    font-weight: 700;
+}
