@@ -21,3 +21,14 @@ body    {
     font-size: 70px;
     font-weight: 700;
 }
+
+.footer {
+    background-color: rgb(52, 70, 173);
+    display: flex;
+    justify-content: center;
+}
+
+.footTitle {
+    font-size: 30px;
+    font-weight: 500;
+}
