@@ -63,8 +63,16 @@ body    {
     width: 380px;
     margin: 10px;
     border: double;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
+.displayOutput{
+    font-size: 70px;
+    height: fit-content;
+    width: fit-content;
+}
 .inputs {
     display: flex;
     flex-direction: column;

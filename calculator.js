@@ -10,20 +10,33 @@ let firstNum = "";
 let secondNum = "";
 let operator = "";
 
-function operate (x, y, operator) {
-
+function operate (x, y, operat) {
+    
     let total = 0;
 
-    total = (operator === "+") ? add(x, y) :
-        (operator === "-") ? substract(x, y) :
-        (operator === "*") ? multiply(x, y) :
-        (operator === "/") ? divide(x, y) :
+    total = (operat === "+") ? add(x, y) :
+        (operat === "-") ? substract(x, y) :
+        (operat === "*") ? multiply(x, y) :
+        (operat === "/") ? divide(x, y) :
         "Invalid Operator"
     ;
 
+    operator = "";
+    firstNum = `${total}`;    
+    secondNum = "";
+
     return total
 }
-//---------------------
+
+//DISPLAy
+
+const display = document.querySelector(".displayOutput")
+
+function updateDisplay(){
+
+    display.textContent = `${firstNum} ${operator} ${secondNum}`;
+
+}
 
 //MANAGING INPUTS
 
@@ -44,20 +57,22 @@ const numericalInputs = [
 const operatorInputs = [
     {id : "plus", number: "+"},
     {id : "substract", number: "-"},
-    {id : "product", number: "*"},
-    {id : "divide", number: "/"},
+    {id : "product", number: "x"},
+    {id : "divide", number: "%"},
 ];
 
 function storeNumericalInput (input) {
+    if(operator === ""){
     firstNum += input;
-    console.log(firstNum)
+    } else {
+    secondNum += input;
+    }
 }
 
 function storeOperatorInput (input) {
     if(operator === ""){
         operator = input;
     }
-    console.log(operator)
 }
 
 function reset () {
@@ -67,11 +82,11 @@ function reset () {
 }
 
 function classifyInput (event) {
-    console.log(event.target.className);
 
     for (number of numericalInputs) {
         if (number.id === event.target.className) {
             storeNumericalInput(number.number);
+            updateDisplay();
             return console.log("Numerical input modified!");
         };
     };
@@ -79,17 +94,21 @@ function classifyInput (event) {
     for (operat of operatorInputs) {
         if (operat.id === event.target.className) {
             storeOperatorInput(operat.number);
+            updateDisplay();
             return console.log("Operator input added!");
         };
     };
 
     if (event.target.className === "equal") {
             operate(firstNum, secondNum, operator);
+            updateDisplay();
+            updateDisplay();
             return console.log("Solved!");
     };
 
     if (event.target.className === "reset") {
             reset();
+            updateDisplay();
             return console.log("Reset!");
     };
 
