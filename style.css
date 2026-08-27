@@ -62,6 +62,7 @@ body    {
     height: 90px;
     width: 380px;
     margin: 10px;
+    border: double;
 }
 
 .inputs {
