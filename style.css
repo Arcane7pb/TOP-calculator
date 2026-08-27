@@ -66,10 +66,10 @@ body    {
 
 .inputs {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: end;
 }
+
 button {
     background-color: white;
     border: 2px solid ;
@@ -78,9 +78,4 @@ button {
     height: 90px;
     font-size: 200%;
     margin: 5px;
-}
-.numbers,
-.operators {
-    margin: 0;
-    padding: 0;
 }
