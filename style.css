@@ -2,7 +2,7 @@
 *::after,
 *::before   {
     box-sizing: border-box;
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: "Silkscreen", sans-serif;
 }
 
 body    {
@@ -69,14 +69,22 @@ body    {
 }
 
 .displayOutput{
-    font-size: 70px;
+    font-size: 50px;
     height: fit-content;
     width: fit-content;
+    overflow: hidden;
+    display: inline-flex;
+    justify-content: flex-end;
+    /* letter-spacing: ; */
 }
 .inputs {
     display: flex;
     flex-direction: column;
     align-items: end;
+}
+
+.middle{
+    padding-right: 6px;
 }
 
 .pad {
@@ -88,8 +96,8 @@ button {
     background-color: white;
     /* border: 2px solid ; */
     border-radius: 25%;
-    width: 90px;
-    height: 90px;
-    font-size: 200%;
+    width: 85px;
+    height: 85px;
+    font-size: 190%;
     margin: 5px;
 }
